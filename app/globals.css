@@ -1,0 +1,195 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 199 100% 50%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 291 100% 60%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 31 100% 50%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 199 100% 50%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 291 100% 60%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 31 100% 50%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-600 via-accent1-500 to-accent2-500;
+  }
+
+  .gradient-text-2 {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent2-500 via-accent3-500 to-brand-500;
+  }
+
+  .gradient-text-3 {
+    @apply bg-clip-text text-transparent bg-gradient-to-br from-accent1-500 to-brand-500;
+  }
+
+  .gradient-bg {
+    @apply bg-gradient-to-br from-brand-600 via-brand-700 to-brand-800;
+  }
+
+  .gradient-bg-2 {
+    @apply bg-gradient-to-br from-accent1-500 via-accent1-600 to-accent1-700;
+  }
+
+  .gradient-bg-3 {
+    @apply bg-gradient-to-br from-accent2-500 via-accent2-600 to-accent2-700;
+  }
+
+  .gradient-bg-4 {
+    @apply bg-gradient-to-br from-accent3-500 via-accent3-600 to-accent3-700;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  .card-hover-accent {
+    @apply transition-all duration-300 hover:shadow-neon-accent hover:-translate-y-1;
+  }
+
+  .card-hover-accent2 {
+    @apply transition-all duration-300 hover:shadow-neon-accent2 hover:-translate-y-1;
+  }
+
+  .dots-bg {
+    background-size: 20px 20px;
+    @apply bg-dots-pattern;
+  }
+
+  .grid-bg {
+    background-size: 20px 20px;
+    @apply bg-grid-pattern;
+  }
+
+  .noise-bg {
+    @apply bg-noise-pattern opacity-20;
+  }
+
+  .feature-icon-container {
+    @apply relative p-3 rounded-xl bg-gradient-to-br from-brand-100 to-brand-200 text-brand-600;
+  }
+
+  .feature-icon-container::before {
+    content: "";
+    @apply absolute inset-0 rounded-xl bg-gradient-to-br from-brand-400/20 to-brand-600/20 opacity-0 transition-opacity duration-300;
+  }
+
+  .feature-icon-container:hover::before {
+    @apply opacity-100;
+  }
+
+  .animated-border {
+    @apply relative rounded-lg p-[1px] overflow-hidden;
+  }
+
+  .animated-border::before {
+    content: "";
+    @apply absolute inset-0 rounded-lg bg-gradient-to-r from-brand-400 via-accent1-400 to-accent2-400 animate-spin-slow;
+  }
+
+  .animated-border-content {
+    @apply relative bg-background rounded-lg z-10;
+  }
+
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-glass;
+  }
+
+  .shimmer {
+    @apply bg-shimmer bg-[length:200%_100%] animate-shimmer;
+  }
+
+  .blob {
+    @apply absolute rounded-full opacity-70 blur-3xl animate-morph;
+  }
+
+  .btn-3d {
+    @apply relative active:top-[4px] active:shadow-none transition-all;
+  }
+
+  .btn-3d-primary {
+    @apply btn-3d shadow-3d;
+  }
+
+  .btn-3d-accent {
+    @apply btn-3d shadow-3d-accent;
+  }
+
+  .btn-3d-accent2 {
+    @apply btn-3d shadow-3d-accent2;
+  }
+
+  .icon-bounce {
+    @apply transition-transform duration-300 group-hover:translate-y-[-3px];
+  }
+
+  .icon-spin {
+    @apply transition-transform duration-700 group-hover:rotate-[360deg];
+  }
+}
+
