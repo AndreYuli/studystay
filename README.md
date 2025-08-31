@@ -58,4 +58,4 @@ npm install -g pnpm
 
 ## Autor
 
-AndreYuli
+AndreYuli + vo dev
